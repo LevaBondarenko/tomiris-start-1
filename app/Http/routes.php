@@ -5,6 +5,7 @@
 Route::get('/', 'Controller@LatestNews');
 
 
+
 Route::get('login', function (){
     return view('auth.login');
 }, array('as'=>'login'));
@@ -22,7 +23,7 @@ Route::get('register', function (){
 
 
 
-Route::get('admin/',array('as' => 'admin', 'uses' => 'Controller@allNews','middleware'=>'auth') );
+Route::get('admin/',array('as' => 'admin', 'uses' => 'Controller@allNews') );
 Route::post('admin/save',array('as' => 'save', 'uses' => 'Controller@upload') );
 
 
